@@ -8,7 +8,7 @@ namespace mode7 {
     }
 
     //%blockid=mode7_isorender
-    //%block=" draw isometric|from $Input to $Output by HighScroll: $H_scroll VectorScroll: $V_scroll Xmax: $A Xmin: $B Ymin: $C Ymax: $D"
+    //%block=" draw isometric|from $Input to $Output by| HighScroll: $H_scroll VectorScroll: $V_scroll Xmax: $A Xmin: $B Ymin: $C Ymax: $D"
     //%Input.shadow=screen_image_picker
     //%Output.shadow=variables_get
     //%weight=10
@@ -25,7 +25,7 @@ namespace mode7 {
     }
 
     //%blockid=mode7_perrender
-    //%block=" draw perspective|from $Input to $Output by HighScroll: $H_scroll VectorScroll: $V_scroll Xmax: $A Xmin: $B Ymin: $C Ymax: $D SubHigh: $H_inc SubVector: $V_inc SubCenterX: $CX_inc SubCenterY: $CY_inc SubXmax: $A_inc SubXmin: $B_inc SubYmin: $C_inc SubYmax: $D_inc"
+    //%block=" draw perspective|from $Input to $Output by| HighScroll: $H_scroll VectorScroll: $V_scroll Xmax: $A Xmin: $B Ymin: $C Ymax: $D SubHigh: $H_inc SubVector: $V_inc SubCenterX: $CX_inc SubCenterY: $CY_inc SubXmax: $A_inc SubXmin: $B_inc SubYmin: $C_inc SubYmax: $D_inc"
     //%Input.shadow=screen_image_picker
     //%Output.shadow=variables_get
     //%weight=5
