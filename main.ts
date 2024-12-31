@@ -15,9 +15,11 @@ namespace mode7 {
     export function IsoRender(Input: Image, Output: Image, H_scroll: number, V_scroll: number, A: number, B: number, C: number, D: number) {
         let Center_X = CalculateMode7(H_scroll,Output.width)
         let Center_Y = CalculateMode7(V_scroll,Output.height)
+        let color = 0
         for (let y = 0; y < Output.height; y++) {
             for (let x = 0; x < Output.width; x++) {
-                Output.setPixel(x, y, Input.getPixel(Math.trunc(Center_X + (0.00390625 * A * (x + (H_scroll - Center_X)) + 0.00390625 * B * (y + (V_scroll - Center_Y)))), Math.trunc(Center_Y + (0.00390625 * C * (x + (H_scroll - Center_X)) + 0.00390625 * D * (y + (V_scroll - Center_Y))))))
+                color = Input.getPixel(Math.trunc(Center_X + (0.00390625 * A * (x + (H_scroll - Center_X)) + 0.00390625 * B * (y + (V_scroll - Center_Y)))), Math.trunc(Center_Y + (0.00390625 * C * (x + (H_scroll - Center_X)) + 0.00390625 * D * (y + (V_scroll - Center_Y)))))
+                if (color > 0) { Output.setPixel(x, y, color) }
             }
         }
     }
@@ -30,9 +32,11 @@ namespace mode7 {
     export function PerRender(Input: Image, Output: Image, H_scroll: number, V_scroll: number, A: number, B: number, C: number, D: number, H_inc: number, V_inc: number, CX_inc: number, CY_inc: number, A_inc: number, B_inc: number, C_inc: number, D_inc: number) {
         let Center_X = CalculateMode7(H_scroll, Output.width)
         let Center_Y = CalculateMode7(V_scroll, Output.height)
+        let color = 0
         for (let y = 0; y < Output.height; y++) {
             for (let x = 0; x < Output.width; x++) {
-                Output.setPixel(x, y, Input.getPixel(Math.floor(Center_X + y * CX_inc + (1 / (A + y * A_inc) * (x + (H_scroll + y * H_inc - (Center_X + y * CX_inc))) + (B + y * B_inc) * (y + (V_scroll + y * V_inc - (Center_Y + y * CY_inc))))), Math.floor(Center_Y + y * CY_inc + ((C + y * C_inc) * (x + (H_scroll + y * H_inc - (Center_X + y * CX_inc))) + 1 / (D + y * D_inc) * (y + (V_scroll + y * V_inc - (Center_Y + y * CY_inc)))))))
+                color = Input.getPixel(Math.floor(Center_X + y * CX_inc + (1 / (A + y * A_inc) * (x + (H_scroll + y * H_inc - (Center_X + y * CX_inc))) + (B + y * B_inc) * (y + (V_scroll + y * V_inc - (Center_Y + y * CY_inc))))), Math.floor(Center_Y + y * CY_inc + ((C + y * C_inc) * (x + (H_scroll + y * H_inc - (Center_X + y * CX_inc))) + 1 / (D + y * D_inc) * (y + (V_scroll + y * V_inc - (Center_Y + y * CY_inc))))))
+                if (color > 0) { Output.setPixel(x, y, color) }
             }
         }
     }
