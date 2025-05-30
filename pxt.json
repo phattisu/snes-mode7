@@ -1,7 +1,7 @@
 {
     "name": "snes-mode7",
     "version": "1.1.0",
-    "description": "",
+    "description": "rendering image like snes-mode7",
     "dependencies": {
         "device": "*"
     },
@@ -15,7 +15,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "1.12.58",
+        "target": "2.0.56",
         "targetId": "arcade"
     },
     "supportedTargets": [
