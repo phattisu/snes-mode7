@@ -7,6 +7,9 @@ namespace snesmode7 {
         return a + 0.5 * b
     }
 
+    /**
+     * render image in isometric render
+     */
     //%blockid=mode7_render_normal
     //%block=" draw isometric|from $from to $to by| HorizontalScroll: $H_scroll VerticalScroll: $V_scroll Xmax: $A Xa: $B Ya: $C Ymax: $D"
     //%from.shadow=screen_image_picker
@@ -24,6 +27,9 @@ namespace snesmode7 {
         }
     }
 
+    /**
+     * render image in perspective render
+     */
     //%blockid=mode7_render_perspactive
     //%block=" draw perspective|from $from to $to by| HorizontalScroll: $H_scroll VerticalScroll: $V_scroll Xmax: $A Xa: $B Ya: $C Ymax: $D SubHigh: $H_inc SubVector: $V_inc SubCenterX: $CX_inc SubCenterY: $CY_inc SubXmax: $A_inc SubXa: $B_inc SubYa: $C_inc SubYmax: $D_inc"
     //%from.shadow=screen_image_picker
